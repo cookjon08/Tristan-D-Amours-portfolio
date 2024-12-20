@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import pip._vendor.requests 
 import json
 
-url = "https://thelinknewspaper.ca/author/tristan-damours"
+url = "https://thelinknewspaper.ca/author/tristan-damours/P100"
 file_name=url.rsplit('/',1)[1].rsplit('.')[0]
 page = pip._vendor.requests.get(url)
 
@@ -16,6 +16,3 @@ for article in soup.find_all("li", "group"):
     }
 
     print(article)
-
-    with open('TheLinkArticles.json', 'w'):
-        json.dumps(article, indent=6)

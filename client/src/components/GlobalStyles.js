@@ -1,8 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-import keyframes from "styled-components";
-const fadeIn = keyframes`
-from { opacity: 0 } to {opacity: 1}
-`;
 
 const GlobalStyles = createGlobalStyle`
 :root {
@@ -10,8 +6,22 @@ const GlobalStyles = createGlobalStyle`
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
-  margin-top: 10vh;
   background-color: rgb(1, 4, 51);
+  margin: 50px 0 100px 0;
+}
+
+ @media (max-width: 768px) {
+    :root {
+      margin-top: 10px;
+    }
+  }
+
+li :hover {
+  background-color: skyblue;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 `;
 
