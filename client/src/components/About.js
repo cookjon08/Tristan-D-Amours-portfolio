@@ -8,7 +8,7 @@ const About = () => {
   return (
     <>
       <Container>
-        <div className="border" style={{ width: ".25%" }}></div>
+        <Banner>{language === "fr" ? "À PROPOS DE MOI" : "ABOUT ME"}</Banner>
         <StyledImage
           alt="Tristan D'Amours standing on the sideline, intently"
           src={require("../assets/photos/sideline.png")}
@@ -62,7 +62,7 @@ const About = () => {
           </Title>
           ;
         </SubContainer>
-        <div className="border" style={{ width: ".25%" }}></div>
+        <Banner>{language === "fr" ? "À PROPOS DE MOI" : "ABOUT ME"}</Banner>
       </Container>
     </>
   );
@@ -73,41 +73,62 @@ export default About;
 const Container = styled.div`
   border: 5px solid skyblue;
   border-radius: 50px;
-  box-shadow: 20px 20px black;
+  box-shadow: 50px 50px black;
   display: flex;
-  justify-content: space-between;
-  gap: 15px;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
   max-width: 50%;
-  padding: 8px;
-  @media (max-width: 1800px) {
+  padding: 28px;
+  @media (max-width: 768px) {
+    box-shadow: 25px 25px black;
     flex-flow: column-reverse;
     align-items: center;
     justify-content: center;
-    gap: 0;
     max-width: 100%;
+  }
+  @media (min-width: 769px) and (max-width: 1664px) {
+    max-width: 75%;
   }
 `;
 
 const SubContainer = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  gap: 5px;
   border: 2.5px solid black;
   border-radius: 50px;
   box-shadow: 15px 15px;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-evenly;
-  align-items: center;
-  margin: 25px;
-  padding: 16px;
-  @media (max-width: 1800px) {
+  padding: 24px;
+  margin: 50px 0 50px;
+  max-width: 50%;
+  @media (max-width: 540px) {
     box-shadow: 7.5px 7.5px black;
-    gap: 10px;
-    margin: 12.5px;
-    max-width: 90%;
-    padding: 8px;
+    margin: 25px 0 25px;
+    max-width: 75%;
   }
-  @media (min-width: 773px) and (max-width: 1565px) {
-    gap: 5px;
-    margin: 20px 0;
+`;
+
+const Banner = styled.div`
+  background-color: skyblue;
+  border: 15px double #108c43;
+  border-radius: 50px;
+  box-shadow: 15px 15px #108c43;
+  color: #108c43;
+  font-size: 50px;
+  font-weight: bold;
+  max-height: 25%;
+  opacity: 0.25;
+  padding: 28px;
+  text-align: right;
+  width: 100%;
+  @media (max-width: 768px) {
+    border: 5px double #108c43;
+    box-shadow: 7.5px 7.5px #108c43;
+    font-size: 30px;
+    padding: 14px;
+    text-align: center;
   }
 `;
 
@@ -116,36 +137,35 @@ const StyledImage = styled.img`
   border: 15px dashed gold;
   border-radius: 50px;
   box-shadow: 15px 15px black;
-  margin: 50px 25px;
-  @media (max-width: 768px) {
-    border: 5px dashed gold;
+  margin: 50px 0 50px;
+  @media (max-width: 540px) {
+    border: 7.5px dashed gold;
     box-shadow: 7.5px 7.5px black;
-    margin: 15px 0;
-    width: 55%;
+    margin: 25px 0 25px;
+    width: 75%;
   }
 `;
 
 const Header = styled.div`
   color: skyblue;
-  font-size: 28px;
-  margin: 15px;
-  text-align: center;
-  @media (max-width: 768px) {
-    font-size: 22px;
-  }
-  @media (min-width: 770px) and (max-width: 1424px) {
-    margin: 15px;
+  font-size: 26px;
+  margin-bottom: 15px;
+  text-align: right;
+  @media (max-width: 767px) {
+    font-size: 24px;
+    text-align: center;
   }
 `;
 
 const Title = styled.div`
   color: aliceblue;
-  font-size: 22px;
+  font-size: 24px;
   max-width: 80%;
-  text-align: center;
-  @media (max-width: 768px) {
-    font-size: 18px;
+  text-align: right;
+  @media (max-width: 767px) {
+    font-size: 22px;
     max-width: 100%;
-    margin: 5px;
+    padding: 5px;
+    text-align: center;
   }
 `;

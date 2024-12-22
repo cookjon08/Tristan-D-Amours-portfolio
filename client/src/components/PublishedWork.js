@@ -83,9 +83,9 @@ const Container = styled.div`
   align-items: center;
   border: 5px solid skyblue;
   border-radius: 50px;
-  box-shadow: 20px 20px black;
+  box-shadow: 50px 50px black;
   max-width: 50%;
-  padding: 16px;
+  padding: 28px;
   @media (max-width: 768px) {
     box-shadow: 7.5px 7.5px black;
     flex-flow: column nowrap;
@@ -102,8 +102,6 @@ const SubContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
-  align-items: center;
-  align-content: center;
   text-align: center;
   @media (max-width: 767px) {
     align-items: center;
@@ -113,17 +111,17 @@ const SubContainer = styled.div`
 
 const SelectContainer = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
   margin: 25px 0;
+  width: 60%;
   border: 2.5px solid black;
   border-radius: 25px;
   box-shadow: 10px 10px black;
-  padding: 16px;
+  padding: 24px;
   @media (max-width: 768px) {
     align-items: center;
     flex-flow: column nowrap;
-    margin: 15px;
+    margin: 20px;
     padding: 8px;
   }
 `;
@@ -134,19 +132,18 @@ const SelectBar = styled.select`
   color: rgb(1, 4, 51);
   font-size: 25px;
   font-variant: small-caps;
-  padding: 5px;
+  padding: 10px;
   text-align: center;
   @media (max-width: 768px) {
     font-size: 20px;
-    padding: 8px;
+    padding: 12px;
   }
 `;
 
 const SelectLabel = styled.label`
   color: gold;
-  font-size: 30px;
+  font-size: 35px;
   font-variant: small-caps;
-  margin-right: 10px;
   text-align: center;
   @media (max-width: 768px) {
     font-size: 20px;

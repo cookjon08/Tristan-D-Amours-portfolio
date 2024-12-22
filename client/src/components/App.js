@@ -48,18 +48,19 @@ const Container = styled.div`
   align-items: flex-start;
   align-content: center;
   justify-content: space-between;
-  @media (max-width: 768px) {
+  @media (max-width: 1200px) {
     flex-flow: column nowrap;
     align-items: center;
+    justify-content: space-evenly;
   }
 `;
 
 const Sidebar = styled.div`
   width: 15%;
-  @media (max-width: 768px) {
+  @media (max-width: 821px) {
     width: 0%;
   }
-  @media (min-width: 777px) and (max-width: 1280px) {
+  @media (min-width: 822px) and (max-width: 1280px) {
     width: 5%;
   }
 `;

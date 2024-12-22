@@ -70,13 +70,13 @@ export default Contact;
 const Container = styled.div`
   border: 5px solid skyblue;
   border-radius: 50px;
-  box-shadow: 20px 20px black;
+  box-shadow: 50px 50px black;
   display: flex;
   flex-flow: row wrap;
   align-items: center;
   justify-content: space-evenly;
   max-width: 50%;
-  padding: 16px;
+  padding: 28px;
   @media (max-width: 768px) {
     box-shadow: 10px 10px black;
     flex-flow: column nowrap;

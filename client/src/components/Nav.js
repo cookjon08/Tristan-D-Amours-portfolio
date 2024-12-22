@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { LanguageToggleContext } from "./LanguageToggleProvider";
 
 const Nav = () => {
+  // Import two functions (sets language state english or french) to help facilitate the language toggle button.
   const { handleFrench, handleEnglish } = useContext(LanguageToggleContext);
   return (
     <>
@@ -11,7 +12,7 @@ const Nav = () => {
         <StyledLine>
           <StyledNavLink
             link={"/"}
-            englishContent={"Tristan D'Amours"}
+            englishContent={"Tristan With Love"}
             frenchContent={"Tristan D'Amours"}
           />
         </StyledLine>
@@ -50,32 +51,37 @@ export default Nav;
 const StyledNav = styled.ul`
   border: 5px solid skyblue;
   border-radius: 50px;
-  box-shadow: 15px 15px black;
+  box-shadow: 20px 20px black;
   font-variant: small-caps;
   list-style-type: none;
   margin: 0 30px 0 0;
-  max-width: 25%;
-  padding: 48px;
+  width: 25%;
+  padding: 32px;
   @media (max-width: 768px) {
+    box-shadow: 10px 10px black;
     margin: 0 0 30px;
+    width: 75%;
+  }
+  @media (min-width: 769px) and (max-width: 1664px) {
+    margin: 0 0 40px;
     max-width: 100%;
   }
 `;
 
 const StyledLine = styled.li`
-  border-bottom: 2.5px solid #108c43;
+  border-bottom: 1px solid skyblue;
   display: box;
-  font-size: 35px;
+  font-size: 45px;
   padding: 8px;
-  text-align: center;
-  @media (max-width: 768px) {
-    font-size: 25px;
+  text-align: right;
+  @media (max-width: 767px) {
+    font-size: 30px;
   }
 `;
 
 const ToggleContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   gap: 25px;
 `;
